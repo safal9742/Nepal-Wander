@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination Details</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        background: #f9fafb;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        background-size: cover;
+        background-position: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        overflow: hidden;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+      }
+      .hero-badges {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      .badge {
+        background: #ff9500;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .region {
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .hero-actions {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+      }
+      .action-btn {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 18px;
+      }
+      .action-btn:hover {
+        background: #ff9500;
+        color: #fff;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        color: #555;
+        flex-wrap: wrap;
+      }
+      .meta .stars {
+        color: #fbbf24;
+        font-size: 16px;
+      }
+
+      .tags {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+      .tag {
+        background: #eef2ff;
+        color: #4f46e5;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+      section h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      section p {
+        color: #555;
+      }
+
+      .included ul,
+      .highlights ul {
+        list-style: none;
+      }
+      .included li,
+      .highlights li {
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .included li::before {
+        content: "✔";
+        color: #16a34a;
+        font-weight: bold;
+      }
+      .highlights li::before {
+        content: "•";
+        color: #4f46e5;
+        font-weight: bold;
+      }
+
+      /* Reviews */
+      .reviews {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .review {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+      }
+      .review:last-child {
+        border-bottom: none;
+      }
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .review-stars {
+        color: #fbbf24;
+      }
+
+      /* Pricing */
+      .pricing {
+        background: #fef3c7;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+      .pricing h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      .pricing button {
+        background: #ff9500;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .pricing button:hover {
+        background: #e07b00;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-badges">
+        <span class="badge">Featured</span>
+        <span class="badge region">Region</span>
+      </div>
+      <div class="hero-actions">
+        <div class="action-btn">♡</div>
+        <div class="action-btn">⇪</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+      <h1>Destination Title</h1>
+      <div class="meta">
+        <div class="stars">★★★★☆ (4.7)</div>
+        <div>(624 reviews)</div>
+        <div>⏰ 8 hours</div>
+      </div>
+
+      <div class="tags"></div>
+
+      <section class="about">
+        <h2>About this Experience</h2>
+        <p></p>
+      </section>
+
+      <section class="included">
+        <h2>What's Included</h2>
+        <ul></ul>
+      </section>
+
+      <section class="highlights">
+        <h2>Experience Highlights</h2>
+        <ul></ul>
+      </section>
+
+      <section class="reviews">
+        <h2>What Travelers Say</h2>
+      </section>
+
+      <section class="pricing">
+        <h3></h3>
+        <button>Book Now</button>
+      </section>
+    </div>
+
+    <script>
+      const destinations = {
+        pokhara: {
+          title: "Pokhara Lake & Mountain Views",
+          region: "Gandaki",
+          image: "/HTML/assets/pokhara-lake.jpg",
+          rating: "★★★★☆ (4.7)",
+          reviews: "624 reviews",
+          duration: "⏰ 8 hours",
+          tags: ["Nature", "City", "Adventure"],
+          about:
+            "Discover Pokhara, Nepal’s adventure capital beneath the Annapurna range. Enjoy lakeside serenity, boating and mountain views.",
+          included: [
+            "Professional Guide",
+            "Entrance Fees",
+            "Bottled Water",
+            "Traditional Lunch",
+          ],
+          highlights: [
+            "Phewa Lake Boating",
+            "Annapurna Views",
+            "Davis Falls",
+            "Nepali Culture",
+          ],
+          reviewsList: [
+            {
+              name: "Rajesh K. - Jan 2025",
+              stars: "★★★★★",
+              text: "One of the most beautiful trips ever!",
+            },
+            {
+              name: "Sita P. - Dec 2024",
+              stars: "★★★★☆",
+              text: "Amazing views, friendly guide.",
+            },
+          ],
+          price: "From NPR 2,500 per person",
+        },
+        lumbini: {
+          title: "Lumbini - Birthplace of Buddha",
+          region: "Province 5",
+          image: "/HTML/assets/lumbini-temple.jpg",
+          rating: "★★★★☆ (4.5)",
+          reviews: "420 reviews",
+          duration: "⏰ 6 hours",
+          tags: ["Heritage", "Spiritual", "Culture"],
+          about:
+            "Visit the sacred birthplace of Lord Buddha, a UNESCO World Heritage Site.",
+          included: [
+            "Guide",
+            "Monastery Visits",
+            "Entrance Pass",
+            "Local Lunch",
+          ],
+          highlights: ["Maya Devi Temple", "Sacred Garden", "Ashokan Pillar"],
+          reviewsList: [
+            {
+              name: "Kiran S. - Jan 2025",
+              stars: "★★★★★",
+              text: "Peaceful and spiritual experience.",
+            },
+          ],
+          price: "From NPR 1,800 per person",
+        },
+        chitwan: {
+          title: "Chitwan Jungle Safari",
+          region: "Province 3",
+          image: "/HTML/assets/chitwan-safari.jpg",
+          rating: "★★★★★ (4.8)",
+          reviews: "980 reviews",
+          duration: "⏰ 2 days",
+          tags: ["Wildlife", "Adventure", "Nature"],
+          about:
+            "Explore the Chitwan National Park, home to tigers, rhinos and elephants.",
+          included: ["Safari Jeep", "Park Entry", "Accommodation", "Guide"],
+          highlights: [
+            "Elephant Safari",
+            "Canoe Ride",
+            "Bird Watching",
+            "Tharu Culture",
+          ],
+          reviewsList: [
+            {
+              name: "Nabin R. - Feb 2025",
+              stars: "★★★★★",
+              text: "Saw a rhino up close! Lifetime memory.",
+            },
+          ],
+          price: "From NPR 4,200 per person",
+        },
+        everest: {
+          title: "Everest Base Camp Trek",
+          region: "Province 1",
+          image: "/HTML/assets/everest-basecamp.jpg",
+          rating: "★★★★★ (5.0)",
+          reviews: "1,200 reviews",
+          duration: "⏰ 12 days",
+          tags: ["Adventure", "Trekking", "Mountains"],
+          about: "Trek to the base of the highest mountain in the world.",
+          included: [
+            "Professional Sherpa Guide",
+            "Permits",
+            "Accommodation",
+            "Meals",
+          ],
+          highlights: [
+            "Namche Bazaar",
+            "Tengboche Monastery",
+            "Kala Patthar",
+            "Everest Base Camp",
+          ],
+          reviewsList: [
+            {
+              name: "Alex T. - Nov 2024",
+              stars: "★★★★★",
+              text: "Dream come true. Challenging but worth it!",
+            },
+          ],
+          price: "From NPR 120,000 per person",
+        },
+        kathmandu: {
+          title: "Kathmandu Durbar Square",
+          region: "Kathmandu",
+          image: "/HTML/assets/kathmandu-durbar.jpg",
+          rating: "★★★★☆ (4.6)",
+          reviews: "512 reviews",
+          duration: "⏰ 4 hours",
+          tags: ["Heritage", "Culture", "City"],
+          about:
+            "Explore the historic heart of Kathmandu with its ancient palaces, temples, and bustling squares. A journey through Nepalese culture and architecture.",
+          included: ["Guide", "Entrance Fees", "Cultural Tour", "Local Snacks"],
+          highlights: [
+            "Hanuman Dhoka Palace",
+            "Taleju Temple",
+            "Kumari Ghar",
+            "Festivals & Culture",
+          ],
+          reviewsList: [
+            {
+              name: "Suman P. - Jan 2025",
+              stars: "★★★★★",
+              text: "Rich cultural experience, beautifully preserved.",
+            },
+          ],
+          price: "From NPR 1,800 per person",
+        },
+        mustang: {
+          title: "Mustang Adventure",
+          region: "Mustang",
+          image: "/HTML/assets/mustang-landscape.jpg",
+          rating: "★★★★☆ (4.7)",
+          reviews: "320 reviews",
+          duration: "⏰ 7 days",
+          tags: ["Adventure", "Culture", "Nature"],
+          about:
+            "Discover the hidden kingdom of Mustang, a remote region of Nepal with dramatic landscapes, Tibetan culture, and ancient monasteries.",
+          included: ["Guide", "Accommodation", "Meals", "Permits"],
+          highlights: [
+            "Lo Manthang Trek",
+            "Ancient Monasteries",
+            "Tibetan Culture",
+            "Caves & Scenic Views",
+          ],
+          reviewsList: [
+            {
+              name: "Rita T. - Feb 2025",
+              stars: "★★★★★",
+              text: "A breathtaking adventure, unforgettable landscapes.",
+            },
+          ],
+          price: "From NPR 3,000 per person",
+        },
+      };
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      const data = destinations[id] || destinations["pokhara"];
+
+      // Hero
+      document.querySelector(
+        ".hero"
+      ).style.backgroundImage = `url(${data.image})`;
+      document.querySelector(".region").textContent = data.region;
+
+      // Title + Meta
+      document.querySelector("h1").textContent = data.title;
+      document.querySelector(".meta .stars").textContent = data.rating;
+      document.querySelector(
+        ".meta div:nth-child(2)"
+      ).textContent = `(${data.reviews})`;
+      document.querySelector(".meta div:nth-child(3)").textContent =
+        data.duration;
+
+      // Tags
+      const tagsDiv = document.querySelector(".tags");
+      tagsDiv.innerHTML = "";
+      data.tags.forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag;
+        tagsDiv.appendChild(span);
+      });
+
+      // About
+      document.querySelector(".about p").textContent = data.about;
+
+      // Included
+      const includedList = document.querySelector(".included ul");
+      includedList.innerHTML = "";
+      data.included.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        includedList.appendChild(li);
+      });
+
+      // Highlights
+      const highlightsList = document.querySelector(".highlights ul");
+      highlightsList.innerHTML = "";
+      data.highlights.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        highlightsList.appendChild(li);
+      });
+
+      // Reviews
+      const reviewsSection = document.querySelector(".reviews");
+      reviewsSection.innerHTML = "<h2>What Travelers Say</h2>";
+      data.reviewsList.forEach((r) => {
+        const div = document.createElement("div");
+        div.className = "review";
+        div.innerHTML = `
+        <div class="review-header">
+          <span>${r.name}</span>
+          <span class="review-stars">${r.stars}</span>
+        </div>
+        <p>${r.text}</p>
+      `;
+        reviewsSection.appendChild(div);
+      });
+
+      // Pricing
+      document.querySelector(".pricing h3").textContent = data.price;
+    </script>
+  </body>
+</html>
